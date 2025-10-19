@@ -1,0 +1,184 @@
+/* Importação de fonte moderna e limpa */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis CSS para gerenciamento de cores - VERSÃO CLARA */
+:root {
+    --cor-fundo-principal: #ffffff; /* Fundo branco limpo */
+    --cor-fundo-secundario: #f8f9fa; /* Fundo de seção levemente cinza */
+    --cor-texto: #333333; /* Texto escuro para alto contraste */
+    --cor-destaque-primaria: #28a745; /* Verde de Ação forte */
+    --cor-destaque-secundaria: #dc3545; /* Vermelho/Alerta para problemas */
+    --cor-header: #1e3c72; /* Azul escuro elegante para o cabeçalho */
+    --cor-card-fundo: #ffffff; /* Fundo do card branco */
+    --cor-texto-claro: #ffffff; /* Texto para fundos escuros */
+    --cor-sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-principal);
+    transition: background-color 0.5s ease;
+}
+
+/* Estilos do Cabeçalho (Header) */
+header {
+    background-color: var(--cor-header);
+    color: var(--cor-texto-claro);
+    padding: 80px 20px 40px; 
+    text-align: center;
+    box-shadow: 0 5px 15px var(--cor-sombra);
+    border-bottom: 3px solid var(--cor-destaque-primaria);
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Estilos da Seção Principal (Main) */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: var(--cor-fundo-secundario);
+    padding: 50px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--cor-sombra);
+    border-top: 5px solid var(--cor-destaque-primaria); 
+}
+
+section#introducao {
+    border-top: 5px solid var(--cor-destaque-secundaria);
+}
+
+section h2 {
+    color: var(--cor-header);
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 1px solid #dee2e6; 
+    padding-bottom: 10px;
+}
+
+section#introducao h2 {
+    color: var(--cor-destaque-secundaria); 
+}
+
+section p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+
+/* Estilos dos Cards (Problemas Principais) */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--cor-card-fundo); 
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--cor-destaque-secundaria); /* Borda lateral de alerta */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px var(--cor-sombra);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--cor-destaque-primaria); /* Muda para verde de ação no hover */
+}
+
+.card h3 {
+    color: var(--cor-destaque-secundaria);
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.card:hover h3 {
+    color: var(--cor-destaque-primaria); /* Muda a cor do título no hover */
+}
+
+.card p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Estilos do Botão de Ação (Conclusões) */
+.btn-acao {
+    display: inline-block;
+    background-color: var(--cor-destaque-primaria); /* Verde de ação */
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 50px; 
+    margin-top: 30px;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3); 
+}
+
+.btn-acao:hover {
+    background-color: #1e7e34;
+    transform: translateY(-2px);
+}
+
+/* Estilos do Rodapé (Footer) */
+footer {
+    background-color: #dfd5d5; /* Fundo do rodapé cinza claro */
+    color: var(--cor-texto);
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+    border-top: 1px solid #354350;
+}
+
+footer p:last-child {
+    margin-top: 5px;
+    font-weight: 600;
+    color: var(--cor-destaque-secundaria); /* Destaque o nome em cor de alerta/importância */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    
+    section {
+        padding: 30px;
+    }
+    
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
